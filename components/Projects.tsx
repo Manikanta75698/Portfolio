@@ -23,7 +23,7 @@ export default function Projects() {
       category: "Next.js / CSS Modules",
       description: "Sleek, fluid transitions, and high-performance developer portfolio built with modern design principles.",
       span: "",
-      liveUrl: "http://localhost:3000",
+      liveUrl: "https://portfolio-amber-phi-24.vercel.app",
       githubUrl: "https://github.com",
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

@@ -1,0 +1,82 @@
+.skillsSection {
+  padding: 96px 24px;
+  border-top: 1px solid #18181b;
+}
+
+.skillsContainer {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  margin-bottom: 48px;
+}
+
+.subHeading {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.mainHeading {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--accent-white);
+}
+
+@media (min-width: 768px) {
+  .mainHeading {
+    font-size: 2.25rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  border-radius: 16px;
+  border: 1px solid rgba(39, 39, 42, 0.8);
+  background-color: rgba(24, 24, 27, 0.4);
+  padding: 32px;
+  transition: border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: #52525b;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--accent-white);
+  margin-bottom: 16px;
+}
+
+.badgeList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: rgba(24, 24, 27, 0.8);
+  font-size: 0.8125rem;
+  color: var(--text-main);
+  font-weight: 500;
+}

@@ -117,3 +117,35 @@
   color: var(--accent-white);
   border-color: #52525b;
 }
+
+.heroSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 64px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Luxury Background Gradient Aura */
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}

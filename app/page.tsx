@@ -1,17 +1,22 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
+import MouseGlow from "@/components/MouseGlow";
+import SectionWrapper from "@/components/SectionWrapper";
 
 export default function Home() {
   return (
-    <main style={{ backgroundColor: "#0a0a0a", minHeight: "100vh" }}>
+    <main style={{ backgroundColor: "#0a0a0a", minHeight: "100vh", position: "relative" }}>
+      <MouseGlow />
       <Navbar />
       <Hero />
-      <Projects />
-      <Skills />
-      <Contact />
+      <SectionWrapper><About /></SectionWrapper>
+      <SectionWrapper><Projects /></SectionWrapper>
+      <SectionWrapper><Skills /></SectionWrapper>
+      <SectionWrapper><Contact /></SectionWrapper>
 
       <footer style={{ padding: "48px 24px", borderTop: "1px solid #18181b", textAlign: "center", fontSize: "0.75rem", color: "#52525b" }}>
         <p>© {new Date().getFullYear()} Manikantha Kasireddy. Built with Next.js & CSS Modules.</p>

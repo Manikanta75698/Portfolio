@@ -1,6 +1,7 @@
 .projectsSection {
-  padding: 96px 24px;
-  border-top: 1px solid #18181b;
+  padding: 120px 24px;
+  border-top: 1px solid rgba(39, 39, 42, 0.4);
+  position: relative;
 }
 
 .projectsContainer {
@@ -12,7 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 48px;
+  margin-bottom: 64px;
 }
 
 @media (min-width: 768px) {
@@ -25,30 +26,31 @@
 .subHeading {
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  color: #71717a;
   font-weight: 600;
   margin-bottom: 12px;
 }
 
 .mainHeading {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--accent-white);
+  letter-spacing: -0.03em;
+  color: #ffffff;
 }
 
 @media (min-width: 768px) {
   .mainHeading {
-    font-size: 2.25rem;
+    font-size: 3rem;
   }
 }
 
 .headerDescription {
-  color: var(--text-muted);
-  font-size: 0.875rem;
+  color: #a1a1aa;
+  font-size: 0.9375rem;
   margin-top: 16px;
   max-width: 380px;
+  line-height: 1.6;
 }
 
 @media (min-width: 768px) {
@@ -71,19 +73,37 @@
 
 .card {
   position: relative;
-  border-radius: 16px;
-  border: 1px solid rgba(39, 39, 42, 0.8);
-  background-color: rgba(24, 24, 27, 0.4);
-  padding: 32px;
-  transition: border-color 0.2s ease;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(24, 24, 27, 0.6) 0%, rgba(18, 18, 20, 0.4) 100%);
+  border: 1px solid rgba(39, 39, 42, 0.6);
+  padding: 36px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
 }
 
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
 .card:hover {
-  border-color: #52525b;
+  border-color: rgba(113, 113, 122, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .spanTwo {
@@ -98,55 +118,86 @@
 
 .cardTopIcon {
   position: absolute;
-  top: 32px;
-  right: 32px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  color: var(--accent-white);
+  top: 36px;
+  right: 36px;
+  opacity: 0.4;
+  transform: translate(-4px, 4px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #ffffff;
 }
 
 .card:hover .cardTopIcon {
   opacity: 1;
+  transform: translate(0, 0);
+}
+
+.cardContentArea {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .iconBox {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   display: inline-flex;
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-  background-color: rgba(24, 24, 27, 0.8);
-  color: var(--text-main);
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(63, 63, 70, 0.5);
+  background: rgba(39, 39, 42, 0.4);
+  color: #f4f4f5;
 }
 
 .category {
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: #71717a;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
 }
 
 .title {
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   font-weight: 600;
-  color: var(--accent-white);
-  margin: 8px 0 12px 0;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px 0;
 }
 
 .description {
-  color: var(--text-muted);
-  font-size: 0.875rem;
+  color: #a1a1aa;
+  font-size: 0.9375rem;
   line-height: 1.6;
 }
 
 .cardFooter {
-  margin-top: 32px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(39, 39, 42, 0.5);
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(39, 39, 42, 0.4);
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: #71717a;
+}
+
+.cardFooterLeft {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.footerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #a1a1aa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+  color: #ffffff;
 }
